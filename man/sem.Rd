@@ -20,4 +20,3 @@ sem(1:4)
 \seealso{
 sd for standard deviation
 }
-

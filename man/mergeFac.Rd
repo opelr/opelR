@@ -12,4 +12,3 @@ mergeFac(...)
 \description{
 concatenates factors while preserving original level order
 }
-

@@ -12,4 +12,3 @@ numfac(...)
 \description{
 Converts factors to numeric. Replaces 'as.numeric(as.character(...))'
 }
-

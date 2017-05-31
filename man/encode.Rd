@@ -17,4 +17,3 @@ When passed a vector of discontinuous numbers, this function returns a list of e
 \examples{
 encode(c(1:4, 7:10), print = TRUE)
 }
-
