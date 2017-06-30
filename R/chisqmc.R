@@ -14,8 +14,13 @@ chisq.mc <- function(mat, alpha = 0.05) {
 
   out <- do.call("rbind", lapply(comparisons, function(ii) {
     nam <- paste(ii, collapse = "-")
-    chi  <- chisq.test(mat[ii, ])
-    X2   <- signif(chi$statistic, 4)
+    chi  <- tryCatch(chisq.test(mat[ii, ]),
+                     error = function(e) e,
+                     warning = function(w) w)
+    if(is(chi,"warning")) {
+      chi <- fisher.test(mat[ii, ], simulate.p.value = TRUE)
+    }
+    X2 <- ifelse(is.null(chi$statistic), NA, signif(chi$statistic, 4))
     p   <- signif(chi$p.value * length(comparisons), 4)
     p   <- ifelse(p > 1, 1, p)
 
