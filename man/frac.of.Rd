@@ -17,3 +17,4 @@ Returns the percentage of observations for a value in a vector of characters or 
 \examples{
 frac.of(letters, 'c')
 }
+

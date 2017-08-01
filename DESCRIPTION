@@ -6,9 +6,12 @@ Date: 2017-05-30
 Author: Ryan Opel
 Collaborators: Ryan Opel, Nick Kuzma
 Maintainer: Complain to <ryan.a.opel@gmail.com>
-Description: This package contains a handful of useful, miscellaneous functions that I find myself constantly loading into R scripts that I write. I will also be using this 'description' file as a means to take note of extremely useful functions I find in CRAN packages. na.locf - Replaces NAs in a vector with previous value.
+Description: This package contains a handful of useful, miscellaneous functions
+    that I find myself constantly loading into R scripts that I write. I will also
+    be using this 'description' file as a means to take note of extremely useful
+    functions I find in CRAN packages. na.locf - Replaces NAs in a vector with
+    previous value.
 License: LGPL v2.1
 LazyData: TRUE
-RoxygenNote: 6.0.1
-Requires:
-	R.oo
+RoxygenNote: 5.0.1
+Requires: R.oo

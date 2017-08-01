@@ -15,3 +15,4 @@ When passed a letter, this function returns the associated column number. Used f
 \examples{
 col2num(c('T', 'AF'))
 }
+
