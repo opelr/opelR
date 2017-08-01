@@ -4,17 +4,17 @@
 \alias{replace_na}
 \title{Replace NAs}
 \usage{
-replace_na(dat, repl.val)
+replace_na(dat, repl)
 }
 \arguments{
 \item{dat}{A data.frame or matrix}
 
-\item{repl.val}{Replacement value. Defaults to 0.}
+\item{repl}{Replacement value. Defaults to 0.}
 }
 \description{
 Replace all NA's with another value in a data.frame or matrix.
 }
 \examples{
-replace_na(matrix(c(1,NA,3,4), ncol = 2), repl.val = 0)
+replace_na(matrix(c(1,NA,3,4), ncol = 2), repl = 0)
 }
 
