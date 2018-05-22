@@ -4,17 +4,17 @@
 \alias{encode}
 \title{Find continuous sequences in discontinuous sequence}
 \usage{
-encode(x, print = FALSE)
+encode(x, as.list = FALSE)
 }
 \arguments{
 \item{x}{A vector or an R object, which is coercible to one by as.vector(x, "numeric")}
 
-\item{print}{logical. Should the list be printed to the console?}
+\item{as.list}{logical. Should the vector be returned as a split list?}
 }
 \description{
 When passed a vector of discontinuous numbers, this function returns a list of each continuous sequence
 }
 \examples{
-encode(c(1:4, 7:10), print = TRUE)
+encode(c(1:4, 7:10), as.list = FALSE)
+encode(c(1:4, 7:10), as.list = TRUE)
 }
-

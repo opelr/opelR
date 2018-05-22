@@ -17,4 +17,3 @@ Replace all NA's with another value in a data.frame or matrix.
 \examples{
 replace_na(matrix(c(1,NA,3,4), ncol = 2), repl = 0)
 }
-

@@ -17,4 +17,3 @@ Perform Bonferroni-corrected chi-sqaure post-hoc testing on a table or matrix.
 \examples{
 chisq.mc(table(mtcars$gear, mtcars$cyl), alpha = 0.05)
 }
-

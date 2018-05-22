@@ -8,7 +8,7 @@
 #' @export
 #' @examples prism("mpg ~ carb", mtcars, excel = T)
 
-prism <- function(formula, data, excel = F) {
+prism <- function(formula, data, SEM = T, excel = F) {
   if(! is.data.frame(data)) stop("'data' must be a data frame")
 
   formula <- gsub(" ", "", formula)
@@ -18,9 +18,16 @@ prism <- function(formula, data, excel = F) {
   y <- strsplit(formula, "~")[[1]][2]
   y <- strsplit(y, "+", fixed = T)[[1]]
 
+  if (SEM) {
+    fn <- function(x) {sd(x, na.rm = T)/sqrt(length(x))}
+    column_name <- "SEM"
+  } else {
+    fn <- function(x) {sd(x, na.rm = T)}
+    column_name <- "SD"
+  }
 
   mea <- aggregate(form, data, mean)
-  sem <- aggregate(form, data, function(ii) sd(ii, na.rm = T)/sqrt(length(ii)))
+  sem <- aggregate(form, data, function(ii) fn(ii))
   n   <- aggregate(form, data, length)
 
   if (excel == T) {
@@ -33,7 +40,7 @@ prism <- function(formula, data, excel = F) {
     xxx <- merge(mea, sem, by = c(y))
     xxx <- merge(xxx, n, by = c(y))
 
-    colnames(xxx) <- c(y, 'Mean', 'SEM', 'n')
+    colnames(xxx) <- c(y, 'Mean', column_name, 'n')
 
     return(xxx)
   }

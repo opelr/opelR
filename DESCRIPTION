@@ -10,5 +10,5 @@ Description: This package contains a handful of useful, miscellaneous functions
     that I find myself freqently loading into R scripts that I write.
 License: LGPL v2.1
 LazyData: TRUE
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1
 Requires: R.oo

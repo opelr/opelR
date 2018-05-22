@@ -19,4 +19,3 @@ Perform Bonferroni-corrected chi-sqaure post-hoc testing on a table or matrix.
 \examples{
 prism("mpg ~ carb", mtcars, excel = T)
 }
-
